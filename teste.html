@@ -4,22 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Água</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
     <style>
-      body {
-    background-image: url('wallpaper.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: pink;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
-    margin: 0;
-    font-family: Garamond, serif;
-  }
+        body {
+            background-image: url('wallpaper.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Garamond, serif;
+        }
+
+        button {
+            width: 200px;
+            height: 60px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            border-radius: 17px;
+            font-family: 'Raleway', sans-serif;
+            transition: .6s;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.3);
+            color: #000;
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        /* Alternativa 1 */
+        .button-alt1 {
+            background: rgba(240, 248, 255, 0.5);
+        }
+
+        .button-alt1::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            width: 60px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: .5;
+            filter: blur(30px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt1::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            width: 30px;
+            height: 100%;
+            left: 30px;
+            top: 0;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt1:hover {
+            background: #338033;
+        }
+
+        .button-alt1:hover::before {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 0.6;
+            transition: .7s;
+        }
+
+        .button-alt1:hover::after {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 1;
+            transition: .7s;
+        }
+
+        /* Alternativa 2 */
+        .button-alt2 {
+            background: rgba(240, 248, 255, 0.5);
+        }
+
+        .button-alt2::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            width: 60px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: .5;
+            filter: blur(30px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt2::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            width: 30px;
+            height: 100%;
+            left: 30px;
+            top: 0;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt2:hover {
+            background: #803339;
+        }
+
+        .button-alt2:hover::before {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 0.6;
+            transition: .7s;
+        }
+
+        .button-alt2:hover::after {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 1;
+            transition: .7s;
+        }
+
+        /* Alternativa 3 */
+        .button-alt3 {
+            background: rgba(240, 248, 255, 0.5);
+        }
+
+        .button-alt3::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            width: 60px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: .5;
+            filter: blur(30px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt3::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            width: 30px;
+            height: 100%;
+            left: 30px;
+            top: 0;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100px) skewX(-15deg);
+        }
+
+        .button-alt3:hover {
+            background: #803339;
+        }
+
+        .button-alt3:hover::before {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 0.6;
+            transition: .7s;
+        }
+
+        .button-alt3:hover::after {
+            transform: translateX(300px) skewX(-15deg);
+            opacity: 1;
+            transition: .7s;
+        }
     </style>
 </head>
 <body>
-    
+    <button class="button-alt1">Alternativa 1</button>
+    <button class="button-alt2">Alternativa 2</button>
+    <button class="button-alt3">Alternativa 3</button>
 </body>
-</html> 
+</html>
