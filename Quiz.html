@@ -66,17 +66,8 @@
         #image-container {
             text-align: center;
             margin-top: 20px;
-            position: relative;
             width: 100%;
             max-width: 600px;
-        }
-
-        #image-container .message {
-            margin-bottom: 10px; /* Espaço entre a mensagem e a imagem */
-            color: white;
-            font-size: 24px;
-            font-family: 'Raleway', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         #image-container img {
@@ -85,7 +76,15 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            border-radius: 15px; /* Cantos arredondados */
+            border-radius: 5px; 
+        }
+
+        #image-container .message {
+            margin-top: 15px; 
+            color: white;
+            font-size: 24px;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         #button-container {
@@ -217,8 +216,8 @@
 </head>
 <body>
     <div id="image-container">
-        <div class="message">Pergunta exemplo</div>
         <img src="imagem1.jpg" alt="Imagem 1">
+        <div class="message">Pergunta exemplo</div>
     </div>
     <div id="button-container">
         <button class="button-alt1">Alternativa 1</button>
