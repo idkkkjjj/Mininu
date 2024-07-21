@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Água</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
     <script>
         function requestFullScreen(element) {
             var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
@@ -30,6 +31,25 @@
             shuffleButtons();
             document.documentElement.addEventListener('click', function() {
                 requestFullScreen(document.documentElement);
+            });
+
+            const alt1Button = document.querySelector('.button-alt1');
+            const explosionSound = document.getElementById('som-acerto');
+
+            alt1Button.addEventListener('click', function() {
+                confetti({
+                    particleCount: 1000,
+                    spread: 700,
+                    origin: { y: 0.6 }
+                });
+
+                explosionSound.play();
+
+                alt1Button.classList.add('explosion');
+
+                setTimeout(function() {
+                    window.location.href = 'https://idkkkjjj.github.io/Mininu/Quiz2';
+                }, 8000); 
             });
         };
     </script>
@@ -115,6 +135,27 @@
         button:focus {
             outline: 0;
         }
+
+        /* KABOOM */
+        .explosion {
+            animation: explode 1s forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
 
         /* Alternativa verdadeira */
         .button-alt1 {
@@ -226,5 +267,7 @@
         <button class="button-alt2">Alternativa 3</button>
         <button class="button-alt2">Alternativa 4</button>
     </div>
+    <audio id="som-acerto" src="acerto.mp3"></audio>
+    <audio id="som-erro" src="erro.mp3"></audio>
 </body>
 </html>
