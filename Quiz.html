@@ -34,7 +34,7 @@
             });
 
             const alt1Button = document.querySelector('.button-alt1');
-            const explosionSound = document.getElementById('som-acerto');
+            const acertoSound = document.getElementById('som-acerto');
 
             alt1Button.addEventListener('click', function() {
                 confetti({
@@ -43,13 +43,23 @@
                     origin: { y: 0.6 }
                 });
 
-                explosionSound.play();
+                acertoSound.play();
 
                 alt1Button.classList.add('explosion');
 
                 setTimeout(function() {
                     window.location.href = 'https://idkkkjjj.github.io/Mininu/Quiz2';
                 }, 8000); 
+            });
+
+            const alt2Buttons = document.querySelectorAll('.button-alt2');
+            const erroSound = document.getElementById('som-erro');
+
+            alt2Buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    erroSound.play();
+                    button.classList.add('explosionf');
+                });
             });
         };
     </script>
@@ -136,7 +146,7 @@
             outline: 0;
         }
 
-        /* KABOOM */
+        /* KABOOM acerto */
         .explosion {
             animation: explode 1s forwards;
         }
@@ -148,14 +158,33 @@
             }
             50% {
                 transform: scale(1.5);
-                opacity: 0.8;
+                opacity: 1;
             }
             100% {
-                transform: scale(0);
+                transform: scale(1);
                 opacity: 1;
             }
         }
 
+        /* KABOOM erro */
+        .explosionf {
+            animation: explodef 1s forwards;
+        }
+
+        @keyframes explodef {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
 
         /* Alternativa verdadeira */
         .button-alt1 {
