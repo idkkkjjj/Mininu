@@ -40,12 +40,13 @@
             background-size: cover;
             background-repeat: no-repeat;
             color: blue;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
             margin: 0;
             font-family: Garamond, serif;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
 
         /* Retrato */
@@ -60,6 +61,33 @@
             html, body {
                 background-image: url('wallpaper2.jpg');
             }
+        }
+
+        #image-container {
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Ajuste conforme necessário */
+        }
+
+        #image-container img {
+            width: 100%;
+            max-width: 300px; /* Ajuste conforme necessário */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #image-container .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         #button-container {
@@ -190,6 +218,10 @@
     </style>
 </head>
 <body>
+    <div id="image-container">
+        <img src="imagem1.jpg" alt="Imagem 1">
+        <div class="message">Pergunta exemplo</div>
+    </div>
     <div id="button-container">
         <button class="button-alt1">Alternativa 1</button>
         <button class="button-alt2">Alternativa 2</button>
