@@ -68,26 +68,24 @@
             margin-top: 20px;
             position: relative;
             width: 100%;
-            max-width: 600px; /* Ajuste conforme necessário */
-        }
-
-        #image-container img {
-            width: 100%;
-            max-width: 300px; /* Ajuste conforme necessário */
-            height: auto;
-            display: block;
-            margin: 0 auto;
+            max-width: 600px;
         }
 
         #image-container .message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            margin-bottom: 10px; /* Espaço entre a mensagem e a imagem */
             color: white;
             font-size: 24px;
             font-family: 'Raleway', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #image-container img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px; /* Cantos arredondados */
         }
 
         #button-container {
@@ -219,8 +217,8 @@
 </head>
 <body>
     <div id="image-container">
-        <img src="imagem1.jpg" alt="Imagem 1">
         <div class="message">Pergunta exemplo</div>
+        <img src="imagem1.jpg" alt="Imagem 1">
     </div>
     <div id="button-container">
         <button class="button-alt1">Alternativa 1</button>
